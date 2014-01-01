@@ -6,7 +6,10 @@ require.config({
         'jasmine-html': 'lib/jasmine-1.1.0/jasmine-html',
 
         'hello': 'src/hello',
+        // add new Subject Under Test here..
+
         'helloSpec': 'spec/helloSpec'
+        // add new specs here
     },
 
     //You'd shim the 3rd party libs that are not AMD compatible
@@ -20,7 +23,14 @@ require.config({
     waitSeconds: 15
 });
 
-require(['domReady', 'jasmine', 'jasmine-html', 'helloSpec'], function(domReady, jasmine) {
+require([
+    'domReady',
+    'jasmine',
+    'jasmine-html',
+    'helloSpec'
+    // add new specs here
+],
+function(domReady, jasmine) {
 //    console.log("All is well..");
 //    console.log(jasmine);
 // Moved the script from Jasmine's SpecRunner.html scriptlet to this block..

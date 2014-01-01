@@ -1,6 +1,6 @@
 # Jasmine Standalone RequireJS
 
-This is basicaly the **Jasmine Standalone Release** ported to use RequireJS.
+This is basically the **Jasmine Standalone Release** ported to use RequireJS.
 
 It includes:
 
@@ -46,6 +46,9 @@ require.config({
         // add new specs here
     },
 
+    // An array of dependencies to load as soon as RequireJS loader has processed the configuration.
+    deps: ['specRunner'],
+
     //You'd shim the 3rd party libs that are not AMD compatible
     shim: {
         'jasmine': {
@@ -60,7 +63,11 @@ require.config({
 
 ## The SpecRunner
 
-And to run the specs, we create the main RequireJS function definition as part of the above test-main.js script:
+And to run the specs, we move the logic to exec the Jasmine runner from the HTML page scriptlet,
+to an anonymous function definition, either as part of the test-main.js or
+to a separate module like specRunner.js and mark it as dependency in the require.config above.
+
+The re-defined logic to execute the Jasmine the RequireJS way is below for quick perusal:
 
 ```javascript
 require([

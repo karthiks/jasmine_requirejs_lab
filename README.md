@@ -74,6 +74,7 @@ function(domReady, jasmine) {
 //    console.log("All is well..");
 //    console.log(jasmine);
 // Moved the script from Jasmine's SpecRunner.html scriptlet to this block..
+// Note that the window.onload functionality is replaced with domReady plugin available for RequireJS
     var jasmineEnv = jasmine.getEnv();
     jasmineEnv.updateInterval = 1000;
 

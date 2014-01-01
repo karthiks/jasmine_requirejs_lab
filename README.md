@@ -60,7 +60,7 @@ require.config({
 
 ## The SpecRunner
 
-And to run the specs, we create the main RequireJS as SpecRunner.js:
+And to run the specs, we create the main RequireJS function definition as part of the above test-main.js script:
 
 ```javascript
 require([
